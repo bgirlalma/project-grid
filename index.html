@@ -21,7 +21,16 @@
             <ul class="posts">
                 <li class="post">
                     <a href="#">
-                        <img src="./img/picture 1.png" alt="kitten" class="post-img">
+                        <picture>
+                            <!-- For viewports wider than 768px -->
+                            <source media="(min-width: 768px)" srcset="./img/picture-1.png">
+
+                            <!-- For viewports between 320px and 768px -->
+                            <source media="(min-width: 320px) and (max-width: 767px)" srcset="./img/picture-1-small.png">
+
+                            <!-- Fallback content -->
+                            <img src="./img/picture-1-small.png" alt="Description of Image">
+                        </picture>
                         <div class="overlay">
                             <h2 class="post-title sub-title">Коти та їхні чудові навички: від полювання до загадкових
                                 здібностей</h2>
@@ -30,7 +39,7 @@
                 </li>
                 <li class="post">
                     <a href="#">
-                        <img src="./img/picture 2.png" alt="scary kitten" class="post-img">
+                        <img src="./img/picture-2.png" alt="scary kitten" class="post-img">
                         <div class="overlay">
                             <h2 class="post-title sub-title">Коти в літературі та мистецтві: від Егіпетських богів до
                                 сучасних
@@ -40,7 +49,7 @@
                 </li>
                 <li class="post">
                     <a href="#">
-                        <img src="./img/picture 3.png" alt="cat" class="post-img">
+                        <img src="./img/picture-3.png" alt="cat" class="post-img">
                         <div class="overlay">
                             <h2 class="post-title sub-title">Котячі породи для активних власників: як вибрати
                                 компаньйона
