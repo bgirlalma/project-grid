@@ -51,7 +51,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .post:first-child{
+  .post:first-child {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
   }
@@ -83,8 +83,27 @@
   font-family: var(--common-font);
 }
 
+.blog {
+  display: grid;
+  gap: 48px;
+}
+
 .blog-link {
+  display: grid;
+  gap: 20px;
   color: var(--common-black);
+}
+
+@media (min-width: 768px) {
+  .blog {
+    gap: 36px;
+    margin-top: 96px;
+  }
+
+  .blog-link {
+    gap: 24px;
+    grid-template-columns: 264px 1fr;
+  }
 }
 
 .blog-title {
@@ -101,12 +120,25 @@
   letter-spacing: 0.5px;
 }
 
+.socials {
+  margin-top: 96px;
+}
+
+.socials-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 8px;
+}
 .socials-title {
   color: var(--grey, #2c2c2c);
   font-family: var(--common-font);
   margin-bottom: 24px;
 }
 .social-link {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  align-items: center;
+  justify-items: center;
   padding: 8px;
   color: var(--common-black, #2f2f37);
   border-radius: 16px;
@@ -114,6 +146,12 @@
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+  .socials-list {
+    gap: 24px;
+  }
 }
 
 .socials-item:nth-child(1) .social-link {
@@ -140,7 +178,13 @@
   background-color: var(--lilac);
 }
 
+.video {
+  margin-top: 96px;
+  margin-bottom: 96px;
+}
+
 .video-title {
+  margin-bottom: 24px;
   color: var(--grey, #2c2c2c);
   font-family: var(--common-font);
 }
@@ -148,4 +192,42 @@
 .footer {
   padding: 16px;
   background-color: var(--blue-light);
+}
+
+.footer .container{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 24px 1fr;
+  column-gap: 8px;
+}
+
+@media (min-width: 1440px) {
+  .main{
+    padding-bottom: 80px;
+  }
+  .longread {
+    margin-top: 80px;
+    display: grid;
+    gap: 24px;
+    grid-template-areas:
+      "b b s"
+      "b b s"
+      "b b v"
+      "b b .";
+  }
+
+  .blog{
+     margin-top: 0;
+    grid-area: b;
+  }
+
+  .socials{
+     margin-top: 0;
+    grid-area: s;
+  }
+
+  .video{
+    grid-area: v;
+    margin-top: 36px;
+  }
 }
